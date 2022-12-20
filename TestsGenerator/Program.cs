@@ -9,8 +9,8 @@ namespace TestsGenerator
             TestsGenerator1 generator = new(@"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestsGenerator\Generated");
 
             generator.Generate(
-                @"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestGenerator\TestsGenerator.Tests\ClassForTests.cs",
-                @"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestGenerator\TestsGenerator.Core\CodeGenerator.cs"
+                @"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestsGenerator\TestsGenerator.Tests\ClassForTests.cs",
+                @"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestsGenerator\TestsGenerator.Core\CodeGenerator.cs"
             ).GetAwaiter().GetResult();
         }
     }

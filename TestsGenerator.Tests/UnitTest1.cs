@@ -4,7 +4,7 @@ namespace TestsGenerator.Tests
 {
     public class UnitTest1 : IDisposable
     {
-        const string Folder = $@"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestGenerator\Generated";
+        const string Folder = $@"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestsGenerator\Generated";
         readonly TestsGenerator1 _generator;
 
         public UnitTest1()
@@ -15,7 +15,7 @@ namespace TestsGenerator.Tests
         [Fact]
         public async void SimpTest()
         {
-            await _generator.Generate(@"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestGenerator\TestsGenerator.Tests\ClassForTests.cs");
+            await _generator.Generate(@"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestsGenerator\TestsGenerator.Tests\ClassForTests.cs");
 
             Assert.True(File.Exists(Folder + "\\" + typeof(ClassForTests).FullName + ".cs"));
         }
@@ -23,7 +23,7 @@ namespace TestsGenerator.Tests
         [Fact]
         public async void OverloadTest()
         {
-            await _generator.Generate(@"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestGenerator\TestsGenerator.Tests\ClassWithoverload.cs");
+            await _generator.Generate(@"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestsGenerator\TestsGenerator.Tests\ClassWithoverload.cs");
 
             var text = File.ReadAllText(Folder + "\\" + typeof(ClassWithoverload).FullName + ".cs");
 
@@ -36,7 +36,7 @@ namespace TestsGenerator.Tests
         [Fact]
         public async void TwoClassesTest()
         {
-            await _generator.Generate(@"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestGenerator\TestsGenerator.Tests\FileWithTwoClasses.cs");
+            await _generator.Generate(@"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestsGenerator\TestsGenerator.Tests\FileWithTwoClasses.cs");
 
             Assert.True(File.Exists(Folder + "\\" + typeof(ClassOne).FullName + ".cs"));
             Assert.True(File.Exists(Folder + "\\" + typeof(ClassTwo).FullName + ".cs"));
@@ -45,7 +45,7 @@ namespace TestsGenerator.Tests
         [Fact]
         public async void ClassInsideClassTest()
         {
-            await _generator.Generate(@"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestGenerator\TestsGenerator.Tests\ClassWithInnerClass.cs");
+            await _generator.Generate(@"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestsGenerator\TestsGenerator.Tests\ClassWithInnerClass.cs");
 
             Assert.True(File.Exists(Folder + "\\" + typeof(ClassWithInnerClass).FullName + ".cs"));
             Assert.True(File.Exists(Folder + "\\" + typeof(ClassWithInnerClass.InnerClass).FullName.Replace('+', '.') + ".cs"));
