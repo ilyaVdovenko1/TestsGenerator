@@ -1,21 +1,17 @@
-﻿using TestGeneratorLibrary;
+﻿using TestsGenerator.Core;
 
-namespace ExampleApp
+namespace TestsGenerator
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            var config = new TestGeneratorConfig(3, 6, 3,
-                new List<string>()
-                {
-                    @"C:\Users\Veronika\Documents\work\5 сем\СПП\LR4\TestsGenerator\ExampleClassesLibrary\Class2.cs",
-                    @"C:\Users\Veronika\Documents\work\5 сем\СПП\LR4\TestsGenerator\ExampleClassesLibrary\Class1.cs",
-                }, @"C:\Users\Veronika\Documents\work\5 сем\СПП\LR4\TestsGenerator\result");
+            TestsGenerator1 generator = new(@"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestsGenerator\Generated");
 
-            var generator = new TestGenerator(config);
-
-            generator.Generate().Wait();
+            generator.Generate(
+                @"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestGenerator\TestsGenerator.Tests\ClassForTests.cs",
+                @"C:\Users\Lenovo\Documents\бгуир\предметы\3курс\5сем\СПП\лабы\TestGenerator\TestGenerator\TestsGenerator.Core\CodeGenerator.cs"
+            ).GetAwaiter().GetResult();
         }
     }
 }
